@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<script type="text/javascript">
+    /*** 用100个随机整数对应的字符串填充数组。**/
+    function createArray(array, start, end) {
+        start = undefined?1:start;
+        end = undefined?100:end;
+        if(end <= start) {
+            end = start + 100;
+        }
+        len = end - start;
+        for(var i=0; i<len; i++) {
+            array.push(Math.floor(Math.random(0,1)*len)+start);
+        }
+        return array;
+        console.log('aaaa'+array);
+    }
+    /*** 数组去重**/
+    function normalize(arr) {
+        if (arr && Array.isArray(arr)) {
+            var i, len, map = {};
+            for (i = arr.length; i >= 0; --i) {
+                if (arr[i] in map) {
+                    arr.splice(i, 1);//如果map里面已经有了arr【i】，就用splice方法删掉重复的
+                    console.log('delete'+arr[i]);
+                } else {
+                    map[arr[i]] = true;//如果map里面没有出现过该元素，map[arr[i]]，就等于是将该元素插入进去。
+                    //console.log(arr[i]);
+                }
+            }
+        }
+        console.log(arr);
+        console.log(map);
+        return arr;
+    }
+    var input = [];
+    createArray(input,1,100);
+    input.sort(function (a, b) {
+        return a - b;
+    });
+    //console.log(input);
+    normalize(input);
+    //console.log(input);
+</script>
+</head>
+<body>
+
+</body>
+</html>

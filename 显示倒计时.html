@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script type="text/javascript">
+    var oDate = new Date();
+    var oYear = oDate.getFullYear();
+
+    var oNewDate = new Date();
+    oNewDate.setFullYear(oYear, 11, 31, 23, 59, 59);
+    var iTime = oNewDate.getTime()-oDate.getTime();
+
+
+    console.log(oDate);//Date {Wed Mar 04 2015 11:08:20 GMT+1100 (EST)}
+    console.log(oDate.getMonth());//2 , DATE里面的month  get出来的值少了1，用的时候要自己加上。
+    console.log(oYear);//2015
+    console.log(oNewDate);//Date {Thu Dec 31 2015 11:08:20 GMT+1100 (EST)}
+    console.log(iTime);//26092800000
+
+    var iS = iTime/1000;
+    var iM = oNewDate.getMonth()-oDate.getMonth();
+    var iDate =iS;
+    console.log(iS);//26092800
+    console.log(iM);//9
+</script>
+<body>
+
+</body>
+</html>

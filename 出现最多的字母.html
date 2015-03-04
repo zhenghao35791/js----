@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        /**
+         * Created by barneystinson on 4/03/2015.
+         */
+        var str = 'asdfssaaasasasasaa';
+        function str_showtimes(str){
+            var result = [];
+            for(var i=0;i<str.length;i++) {
+                if(!result[str.charAt(i)]){//表明还没有str【i】
+                    result[str.charAt(i)] =1;
+                }else {
+                    result[str.charAt(i)]++;
+                }
+            };
+            var iMax = 0;
+            var iIndex = 0;
+            for(var i in result) {
+                if(result[i]>iMax) {
+                    iMax = result[i];
+                    iIndex = i;
+                }
+            }
+            alert('出现次数最多的是:'+iIndex+'出现'+iMax+'次');
+            console.log(result);
+        }
+        str_showtimes('asdfssaaasasasasaa');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
